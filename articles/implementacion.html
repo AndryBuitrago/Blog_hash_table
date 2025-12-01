@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Implementación y Operaciones Fundamentales</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Implementación y Operaciones Fundamentales</h1>
+      <p>Post #3 — Put, Get y Delete explicados</p>
+      <a href="../index.html">← Volver al inicio</a>
+    </div>
+  </header>
+
+  <article class="container post-content">
+    <h2>Operaciones básicas</h2>
+    <p>Las tablas hash soportan tres operaciones fundamentales: insertar (put), buscar (get) y eliminar (delete). Todas se basan en calcular el hash de la clave para obtener un índice en el arreglo interno.</p>
+
+    <h2>Insertar (put)</h2>
+    <p>Pasos:</p>
+    <ol>
+      <li>Calcular el <strong>hash</strong> de la clave (e.g., hash(key) % tamaño_tabla para obtener el índice).</li>
+      <li>Si el índice está vacío, almacenar el par clave-valor allí.</li>
+      <li>Si hay colisión, resolverla según la técnica (agregar a lista en chaining, o probing en open addressing).</li>
+    </ol>
+    <p>Ejemplo: Insertar "apple" -> 5 (hash) en índice 2.</p>
+
+    <h2>Buscar (get)</h2>
+    <p>Pasos:</p>
+    <ol>
+      <li>Calcular el hash e índice de la clave.</li>
+      <li>Acceder al índice y comparar claves hasta encontrar el valor asociado.</li>
+      <li>En chaining: recorrer la lista. En open addressing: seguir probing hasta hallar o llegar a celda vacía.</li>
+    </ol>
+    <p>Ejemplo: Buscar "apple" -> ir a índice 2 y retornar el valor.</p>
+
+    <h2>Eliminar (delete)</h2>
+    <p>Pasos:</p>
+    <ol>
+      <li>Calcular hash e índice.</li>
+      <li>Localizar la clave (similar a get).</li>
+      <li>Eliminar: En <strong>chaining</strong>, remover el nodo de la lista. En <strong>open addressing</strong>, marcar la celda como "deleted" (para no romper chains de probing, pero permitir reutilización futura).</li>
+    </ol>
+    <p>Nota: Eliminar en open addressing requiere cuidado para no afectar búsquedas futuras.</p>
+
+    <h2>Ejemplo visual</h2>
+    <p>Aquí un diagrama mostrando el flujo: inserción de 3 claves ("apple":5, "banana":3, "cherry":7), búsqueda de "banana", y eliminación de "apple".</p>
+    <img src="../assets/img/operaciones-hash.png" alt="Diagrama de operaciones en tabla hash" style="max-width:100%; border-radius:8px; box-shadow:0 4px 20px rgba(0,0,0,0.2);">
+    <p><small>Puedes crear este diagrama en Draw.io o usar uno similar de Wikimedia: https://upload.wikimedia.org/wikipedia/commons/5/58/Hash_table_4_1_1_0_0_1_0_LL.svg (guárdalo como operaciones-hash.svg).</small></p>
+  </article>
+
+  <footer>
+    <p>© 2025 Andry Buitrago</p>
+  </footer>
+</body>
+</html>
