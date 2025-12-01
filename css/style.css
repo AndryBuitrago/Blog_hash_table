@@ -1,3 +1,5 @@
+
+
 /* Reset básico */
 * { margin:0; padding:0; box-sizing:border-box; }
 body { font-family: 'Segoe UI', system-ui, sans-serif; line-height:1.6; background:#f4f4f9; color:#333; }
@@ -77,4 +79,25 @@ footer { text-align:center; padding:2rem; background:#333; color:#ddd; margin-to
 /* Responsive */
 @media (max-width: 600px) {
   header h1 { font-size: 2.2rem; }
+}
+
+/*  IMÁGENES   */
+.full {
+  display: block;                    /* Para que respete los márgenes */
+  max-width: 70%;                   /* Responsive en móvil */
+  width: 60%;                        /* Un poco más ancho en pantallas grandes */
+  height: auto;                      /* Mantiene proporción */
+  margin: 3rem auto;                 /* Espacio arriba/abajo + centrado */
+  border-radius: 12px;               /* Bordes suaves */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15); /* Sombra elegante */
+  border: 1px solid #e0e0e0;         /* Borde sutil (opcional, queda muy pro) */
+  background: white;                 /* Fondo blanco por si la imagen tiene transparencia */
+  padding: 1rem;                     /* Un pequeño margen interno */
+  box-sizing: border-box;
+}
+
+.full:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
 }
