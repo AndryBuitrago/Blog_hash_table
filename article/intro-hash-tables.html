@@ -15,35 +15,31 @@
     </div>
   </header>
 
-  <article class="container article-content">
-    <h2>¿Qué es una Tabla Hash?</h2>
-    <p></p>
-    <p>Una <strong>tabla hash</strong> (o diccionario, mapa) es una estructura de datos que permite almacenar pares <em>clave-valor</em> y acceder a ellos en tiempo promedio constante O(1).</p>
-    <p></p>
-    <p></p>
-    
-    <h2>Conceptos clave</h2>
-    <p></p>
-    <ul>
-      <li><strong>Clave (key)</strong>: identificador único</li>
-      <p></p>
-      <li><strong>Valor (value)</strong>: dato asociado</li>
-      <p></p>
-      <li><strong>Función hash</strong>: convierte la clave en un número entero</li>
-      <p></p>
-      <li><strong>Índice</strong>: posición dentro del arreglo interno</li>
-      <p></p>
-      <li><strong>Colisión</strong>: dos claves distintas generan el mismo índice</li>
-    </ul>
-    <p></p>
-    <p></p>
-    
-    <h2>¿Por qué son tan eficientes?</h2>
-    <p></p>
-    <p>Porque en promedio las operaciones de inserción, búsqueda y eliminación son <strong>O(1)</strong>. ¡Más rápido que un árbol binario de búsqueda!</p>
-    <p></p>
-    <p></p>
-    
+ <article class="container post-content">
+  <h2>¿Qué es una Tabla Hash?</h2>
+  <p>Una tabla hash es una estructura de datos que permite asociar <strong>claves</strong> con <strong>valores</strong> y acceder a ellos en tiempo promedio <strong>O(1)</strong>. Es el núcleo de diccionarios en Python, objetos en JavaScript, HashMap en Java, etc.</p>
+<p></p><p></p>
+  <h2>Conceptos fundamentales</h2>
+  <div class="grid-2">
+    <div>
+      <ul>
+        <li><strong>Clave (key)</strong>: Identificador único</li>
+        <li><strong>Valor (value)</strong>: Dato asociado</li>
+        <li><strong>Función hash</strong>: Transforma la clave en un número entero</li>
+        <li><strong>Índice</strong>: hash(key) % tamaño_tabla</li>
+        <li><strong>Colisión</strong>: Dos claves → mismo índice</li>
+      </ul>
+    </div>
+    <img src="../assets/img/hash-visual.svg" alt="Funcionamiento básico de tabla hash">
+  </div>
+
+   <p></p><p></p>
+
+  <h2>¿Por qué O(1) en promedio?</h2>
+  <p>Porque no recorremos secuencialmente: calculamos directamente la posición. Con una buena función hash y factor de carga < 0.7, las colisiones son raras → acceso casi instantáneo.</p>
+
+   <p></p><p></p>
+   
     <h2>Diagrama simple</h2>
     <img src="../imagenes/Diagrama tabla hash.jpg" alt="Diagrama tabla hash" style="max-width:100%; border-radius:8px; box-shadow:0 4px 20px rgba(0,0,0,0.2);">
   </article>
